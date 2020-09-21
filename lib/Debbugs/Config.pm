@@ -1172,7 +1172,8 @@ set_default(\%config,'html_tail',sub {
  <A HREF=\"@{[$config->web_domain]}\">Debian @{[$config->bug]} tracking system</A><BR>
  Copyright (C) 1999 Darren O. Benham,
  1997,2003 nCipher Corporation Ltd,
- 1994-97 Ian Jackson.
+ 1994-97 Ian Jackson,
+ 2005-2020 <A HREF="https://salsa.debian.org/debbugs-team/debbugs/">debbugs-team</A>
  </P>
  </ADDRESS>
 END

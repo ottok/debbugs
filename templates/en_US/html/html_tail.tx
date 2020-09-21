@@ -9,13 +9,14 @@
     </p>
     <p>
         Debbugs is free software and licensed under the terms of the
-        GNU Public License version 2. The current version can be
-        obtained from <a href="https://bugs.debian.org/debbugs-source/">https://bugs.debian.org/debbugs-source/</a>.
+        GNU Public License version 2. Get the source or contribute at
+        <a href="https://salsa.debian.org/debbugs-team/debbugs">salsa.debian.org/debbugs-team/debbugs</a>.
     </p>
     <p>
         Copyright © 1999 Darren O. Benham,
         1997,2003 nCipher Corporation Ltd,
         1994-97 Ian Jackson,
-        2005-2017 Don Armstrong, and many other contributors.
+        2005-2017 Don Armstrong,
+        and <a href="https://salsa.debian.org/debbugs-team/debbugs/-/graphs/master">many other contributors</a>.
     </p>
 </address>

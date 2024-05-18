@@ -27,7 +27,7 @@ Build-Depends-Indep: libparams-validate-perl,
 # required for use strictures 2
  libstrictures-perl, libbareword-filehandles-perl, libindirect-perl, libmultidimensional-perl,
 # used to make the logo
- inkscape
+ librsvg2-bin
 Homepage: https://salsa.debian.org/debbugs-team
 Testsuite: autopkgtest-pkg-perl
 

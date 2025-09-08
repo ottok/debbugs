@@ -19,7 +19,7 @@ use DebbugsTest qw(:all);
 our $tests_run = 0;
 
 my %config = create_debbugs_configuration();
-
+exit 0 unless %config; # Stop here if project root was not found
 
 # create 4 bugs
 for (1..4) {
@@ -54,9 +54,7 @@ EOF
 my $pgsql = create_postgresql_database();
 update_postgresql_database($pgsql);
 
-BEGIN{
-    use_ok('Debbugs::DB')
-}
+use_ok('Debbugs::DB'); # Moved out of BEGIN block
 $tests_run++;
 
 my $s;

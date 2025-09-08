@@ -27,19 +27,35 @@ None known.
 
 use warnings;
 use strict;
-use vars qw($VERSION $DEBUG %EXPORT_TAGS @EXPORT_OK @EXPORT);
+our ($VERSION, $DEBUG);
+BEGIN {
+    ($VERSION) = q$Revision: 1.3 $ =~ /^Revision:\s+([^\s+])/;
+    $DEBUG = 0 unless defined $DEBUG;
+}
+
+eval "use Search::Estraier";
+if ($@) {
+    require Exporter;
+    our @ISA = qw(Exporter);
+    our (@EXPORT_OK, %EXPORT_TAGS);
+    @EXPORT_OK = qw(add_bug_log add_bug_message);
+    %EXPORT_TAGS = (add => \@EXPORT_OK, all => \@EXPORT_OK);
+    sub add_bug_log { return; }
+    sub add_bug_message { return; }
+    sub remove_old_messages { return; }
+    return 1;
+}
+
+# If we are here, Search::Estraier is loaded.
+use vars qw(%EXPORT_TAGS @EXPORT_OK @EXPORT);
 use Exporter qw(import);
 use Debbugs::Log;
-use Search::Estraier;
 use Debbugs::Common qw(getbuglocation getbugcomponent make_list);
 use Debbugs::Status qw(readbug);
 use Debbugs::MIME qw(parse);
 use Encode qw(encode_utf8);
 
 BEGIN{
-     ($VERSION) = q$Revision: 1.3 $ =~ /^Revision:\s+([^\s+])/;
-     $DEBUG = 0 unless defined $DEBUG;
-
      @EXPORT = ();
      %EXPORT_TAGS = (add    => [qw(add_bug_log add_bug_message)],
 		    );

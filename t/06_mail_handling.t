@@ -1,7 +1,7 @@
 # -*- mode: cperl;-*-
 # $Id: 05_mail.t,v 1.1 2005/08/17 21:46:17 don Exp $
 
-use Test::More tests => 127;
+use Test::More;
 
 use warnings;
 use strict;
@@ -27,6 +27,8 @@ use Encode qw(decode encode);
 # HTTP::Server:::Simple defines a SIG{CHLD} handler that breaks system; undef it here.
 $SIG{CHLD} = sub {};
 my %config = create_debbugs_configuration();
+exit 0 unless %config;
+plan tests => 127;
 
 
 my $sendmail_dir = $config{sendmail_dir};

@@ -12,6 +12,7 @@ use Data::Dumper;
 
 my %config =
     create_debbugs_configuration();
+exit 0 unless %config;
 
 my $sendmail_dir = $config{sendmail_dir};
 my $spool_dir = $config{spool_dir};

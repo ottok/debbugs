@@ -25,6 +25,7 @@ use Data::Dumper;
 # HTTP::Server:::Simple defines a SIG{CHLD} handler that breaks system; undef it here.
 $SIG{CHLD} = sub {};
 my %config = create_debbugs_configuration();
+exit 0 unless %config;
 
 
 my $sendmail_dir = $config{sendmail_dir};

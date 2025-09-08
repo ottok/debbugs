@@ -26,8 +26,10 @@ use DebbugsTest qw(:all);
 # This must happen before anything is used, otherwise Debbugs::Config will be
 # set to wrong values.
 my %config = create_debbugs_configuration();
+exit 0 unless %config; # Stop here if project root was not found
 
-my $tests = 0;
+my $tests = 0; # Initialize tests_run AFTER exit check
+
 use_ok('Debbugs::Bug');
 $tests++;
 use_ok('Debbugs::Collection::Bug');

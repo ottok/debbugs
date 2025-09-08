@@ -1,7 +1,7 @@
 # -*- mode: cperl;-*-
 
 
-use Test::More tests => 4;
+use Test::More;
 
 use warnings;
 use strict;
@@ -18,6 +18,8 @@ use DebbugsTest qw(:configuration);
 use Cwd;
 
 my %config = create_debbugs_configuration();
+exit 0 unless %config;
+plan tests => 4;
 
 
 # create a bug

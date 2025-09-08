@@ -1,6 +1,6 @@
 # -*- mode: cperl;-*-
 
-use Test::More tests => 20;
+use Test::More;
 
 use warnings;
 use strict;
@@ -26,6 +26,8 @@ use Test::WWW::Mechanize;
 # HTTP::Server:::Simple defines a SIG{CHLD} handler that breaks system; undef it here.
 $SIG{CHLD} = sub {};
 my %config = create_debbugs_configuration();
+exit 0 unless %config;
+plan tests => 20;
 
 
 my $sendmail_dir = $config{sendmail_dir};
